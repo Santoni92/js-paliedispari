@@ -16,17 +16,21 @@ while(sceltaUtente !== 'pari' && sceltaUtente !== 'dispari')  /*fintantoché  l'
     sceltaUtente.trim().toLocaleLowerCase();
 }
 
-let numeroInserito = prompt('Inserisci numero: ');
+let numeroInserito = parseInt(prompt('Inserisci numero: '));
 while(isNaN(numeroInserito) || (numeroInserito < 1 || numeroInserito > 5))  /*fintantoché l'utente non inserisce un valore numerico o fintantoché 
                                                                             non inserisce un numero che sia compreso tra 1 ed 5 chiedigl idi inserire un numero */
 {
     numeroInserito = prompt('Inserisci numero: ');
 }
-
+console.log("numero inserito dall'utente: " + numeroInserito);
 numeroGeneratoDalPc = generaNumeroRandom(1,5);  //passo come argomento della funzione i due estremi dell'intervallo all'interno del quale dovrà ricadere il numero random generato 
+console.log("numero random generato dal computer: "  + numeroGeneratoDalPc);
+
 
 let somma = 0;
 somma = numeroInserito + numeroGeneratoDalPc;
+console.log("somma dei due numeri: " + somma);
+
 
 if((sceltaUtente === "pari" && isEvenOrOdd(somma)) || (sceltaUtente === "dispari" && !isEvenOrOdd(somma)))
 {
