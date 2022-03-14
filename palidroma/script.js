@@ -5,7 +5,7 @@ Creare una funzione per capire se la parola inserita è palindroma*/
 console.log('JS OK!');  //per verificare che lo script js sia ben collegato all'html
 
 let parolaUtente = prompt("Programma che verifica se la parola inserita dall'utente sia una parola palindroma ovvero una parola che letta o da sinistra verso destra o  viceversa non cambia. Inserisci parola: ");
-parolaUtente.trim().toLowerCase();
+parolaUtente = parolaUtente.trim().toLowerCase();
 isPal(parolaUtente);
 
 /*funzione che data una stringa in ingresso mi stampa la stringa rovesciata,ad esempio, se in ingresso gli
