@@ -7,13 +7,13 @@ Dichiariamo chi ha vinto.*/
 
 let sceltaUtente = prompt('pari o dispari ?');
 
-while(sceltaUtente.trim().toLowerCase() === "pari" || sceltaUtente.trim().toLowerCase() === "dispari")  /*fintantoché 
-                                                                                                        l'utente non inserisce la stringa "pari" o la stringa "dispari"
-                                                                                                        chiedi la scelta;ho usato la funzione trim() che elimina eventuali spazi all'inizio o alla fine
-                                                                                                        della stringa inserita ed questa funzione restituisce una stringa sulla quale poi successivamente richiamo il metodo toLowerCase()
-                                                                                                        per trasformare tutta in minuscolo la stringa*/
+while(sceltaUtente !== 'pari' && sceltaUtente !== 'dispari')  /*fintantoché  l'utente non inserisce la stringa "pari" o la stringa "dispari"
+                                                                chiedi la scelta;ho usato la funzione trim() che elimina eventuali spazi all'inizio o alla fine
+                                                                della stringa inserita ed questa funzione restituisce una stringa sulla quale poi successivamente richiamo il metodo toLowerCase()
+                                                                per trasformare tutta in minuscolo la stringa*/
 {
     sceltaUtente = prompt('pari o dispari ?');
+    sceltaUtente.trim().toLocaleLowerCase();
 }
 
 let numeroInserito = prompt('Inserisci numero: ');
@@ -28,7 +28,27 @@ numeroGeneratoDalPc = generaNumeroRandom(1,5);  //passo come argomento della fun
 let somma = 0;
 somma = numeroInserito + numeroGeneratoDalPc;
 
-isEvenOrOdd(somma);
+if((sceltaUtente === "pari" && isEvenOrOdd(somma)) || (sceltaUtente === "dispari" && !isEvenOrOdd(somma)))
+{
+    prompt("Ha vinto l'utente!!!")
+}else{
+    prompt("Ha vinto il computer!!!")
+}
 
 
 //implementazione funzione per generare un numero random compreso in un determinato intervallo
+function generaNumeroRandom(min,max){
+    const range = max - min + 1;
+    const numeroGenerato = Math.floor(Math.random() * range) + min;
+    return numeroGenerato;
+}
+//implementazione funzione che riceve in ingresso un numero e ritorna 'true' se il numero inserito è pari altrimenti 'false' se è dispari
+function isEvenOrOdd(numero)
+{
+    if(numero % 2 === 0){
+        return true;
+    }else{
+        return false;
+    }
+
+}
