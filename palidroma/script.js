@@ -24,14 +24,6 @@ function isPal(parola){
     parolaRovesciata = rovesciaStringa(parola);   /*ottengo come output di questa funzione un array che rappresenta la parola 
                                                   inserita dall'utente scritta da però da destra verso sinistra */
 
-    let isPal = true;
-    for(let i = 0; i < parola.length; i++)
-    {
-        if(parola[i] !== parolaRovesciata[i])
-        {
-            isPal = false;
-        }
-    }
     if(parola === parolaRovesciata){
         return prompt('La parola inserita risulta essere una parola palindroma!!!');
     }else{
