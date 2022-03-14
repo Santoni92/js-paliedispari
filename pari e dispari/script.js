@@ -44,6 +44,10 @@ if((sceltaUtente === "pari" && isEvenOrOdd(somma)) || (sceltaUtente === "dispari
 
 //implementazione funzione per generare un numero random compreso in un determinato intervallo
 function generaNumeroRandom(min,max){
+    /*come faccio a controllare che effettivamente alla funzione gli vengano passati come parametri due numeri e in particolare numeri comprewsi tra 1 ed 5 ?
+    while(isNaN(min) || isNaN(max)){
+        return error;  BOH
+    }
     let temp;
     if(min > max){  //controllo che effettivamente siano passati come argomenti alla funzione prima l'estremo inferiore e come secondo parametro l'estremo superiore
         temp = min;
@@ -52,6 +56,7 @@ function generaNumeroRandom(min,max){
     }else if(min == max){
         prompt("Hai inserito estremi dell'intervallo uguali");
     }
+    */
     const range = max - min + 1;
     const numeroGenerato = Math.floor(Math.random() * range) + min;
     return numeroGenerato;

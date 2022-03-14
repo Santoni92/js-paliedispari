@@ -10,10 +10,10 @@ isPal(parolaUtente);
 
 /*funzione che data una stringa in ingresso mi stampa la stringa rovesciata,ad esempio, se in ingresso gli
  do la stringa "abc" essa mi ritorna la stringa "cba" */
-function rovesciaStringa(array){
+function rovesciaStringa(stringa){
     let stringaRovesciata = "";
-    for(let i = (array.length - 1); i >= 0; i--){
-        stringaRovesciata += array[i];
+    for(let i = (stringa.length - 1); i >= 0; i--){
+        stringaRovesciata += stringa[i];
     }
     return stringaRovesciata;
 }
@@ -33,6 +33,7 @@ function isPal(parola){
 
 /*Oppure senza trasformare la parola inserita dall'utente tutta in minuscolo modifico la mia funzione 'isPal'
 in modo tale che venga effettuato il controllo su ciascuna delle lettere della parola inserita e della sua versione rovesciata
+
 function isPal(parola){
     parolaRovesciata = rovesciaStringa(parola)
     let isPal = true;
