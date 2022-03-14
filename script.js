@@ -8,7 +8,7 @@ let parolaUtente = prompt("Programma che verifica se la parola inserita dall'ute
 
 isPal(parolaUtente);
 
-/*funzione che dato una stringa in ingresso mi stampa la stringa rovesciata,ad esempio, se in ingresso gli
+/*funzione che data una stringa in ingresso mi stampa la stringa rovesciata,ad esempio, se in ingresso gli
  do la stringa "abc" essa mi ritorna la stringa "cba" */
 function rovesciaStringa(array){
     let stringaRovesciata = "";
