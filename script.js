@@ -8,20 +8,20 @@ let parolaUtente = prompt("Programma che verifica se la parola inserita dall'ute
 
 isPal(parolaUtente);
 
-/*funzione che dato un array in ingresso mi stampa l'array con gli elementi rovesciati,ad esempio, se in ingresso gli
- do l'array [1,2,3] essa mi ritorna l'array [3,2,1]*/
-function rovesciaArray(array){
-    let arrayRovesciato = [];
+/*funzione che dato una stringa in ingresso mi stampa la stringa rovesciata,ad esempio, se in ingresso gli
+ do la stringa "abc" essa mi ritorna la stringa "cba" */
+function rovesciaStringa(array){
+    let stringaRovesciata = "";
     for(let i = (array.length - 1); i >= 0; i--){
-        arrayRovesciato.push(array[i]);
+        stringaRovesciata += array[i];
     }
-    return arrayRovesciato;
+    return stringaRovesciata;
 }
 /*Implementazione funzione isPal
 Questa funzione riceve in ingresso una stringa, richiama un'altra funzione che restituisce rovesciata la stringa ricevuta in ingresso ;dopodichè 
 va a confrontare l'argomento dato in ingresso con la stringa rovesciata*/
 function isPal(parola){
-    parolaRovesciata = rovesciaArray(parola);   /*ottengo come output di questa funzione un array che rappresenta la parola 
+    parolaRovesciata = rovesciaStringa(parola);   /*ottengo come output di questa funzione un array che rappresenta la parola 
                                                   inserita dall'utente scritta da però da destra verso sinistra */
     if(parola === parolaRovesciata){
         return prompt('La parola inserita risulta essere una parola palindroma!!!');
