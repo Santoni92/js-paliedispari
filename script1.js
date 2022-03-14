@@ -5,6 +5,8 @@ Sommiamo i due numeri
 Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 Dichiariamo chi ha vinto.*/
 
+
+
 let sceltaUtente = prompt('pari o dispari ?');
 
 while(sceltaUtente !== 'pari' && sceltaUtente !== 'dispari')  /*fintantoché  l'utente non inserisce la stringa "pari" o la stringa "dispari"
@@ -20,7 +22,7 @@ let numeroInserito = parseInt(prompt('Inserisci numero: '));
 while(isNaN(numeroInserito) || (numeroInserito < 1 || numeroInserito > 5))  /*fintantoché l'utente non inserisce un valore numerico o fintantoché 
                                                                             non inserisce un numero che sia compreso tra 1 ed 5 chiedigl idi inserire un numero */
 {
-    numeroInserito = prompt('Inserisci numero: ');
+    numeroInserito = parseInt(prompt('Inserisci numero: '));
 }
 console.log("numero inserito dall'utente: " + numeroInserito);
 numeroGeneratoDalPc = generaNumeroRandom(1,5);  //passo come argomento della funzione i due estremi dell'intervallo all'interno del quale dovrà ricadere il numero random generato 
@@ -42,6 +44,14 @@ if((sceltaUtente === "pari" && isEvenOrOdd(somma)) || (sceltaUtente === "dispari
 
 //implementazione funzione per generare un numero random compreso in un determinato intervallo
 function generaNumeroRandom(min,max){
+    let temp;
+    if(min > max){  //controllo che effettivamente siano passati come argomenti alla funzione prima l'estremo inferiore e come secondo parametro l'estremo superiore
+        temp = min;
+        min = max;
+        max = temp;
+    }else if(min == max){
+        prompt("Hai inserito estremi dell'intervallo uguali");
+    }
     const range = max - min + 1;
     const numeroGenerato = Math.floor(Math.random() * range) + min;
     return numeroGenerato;
