@@ -7,7 +7,7 @@ Dichiariamo chi ha vinto.*/
 
 
 
-let sceltaUtente = prompt('pari o dispari ?').trim().toLowerCase;
+let sceltaUtente = prompt('pari o dispari ?').trim().toLowerCase();
 
 while(sceltaUtente !== 'pari' && sceltaUtente !== 'dispari')  /*fintantoché  l'utente non inserisce la stringa "pari" o la stringa "dispari"
                                                                 chiedi la scelta;ho usato la funzione trim() che elimina eventuali spazi all'inizio o alla fine
